@@ -29,8 +29,6 @@ Game::Game() : world(b2Vec2(0.0f, -10.0f)) {
 	b2BodyDef bodyDef;
 	bodyDef.type = b2_dynamicBody;
 	bodyDef.position.Set(0.0f, 4.0f);
-	
-	// Create actual protagonist body object in world
 	body = world.CreateBody(&bodyDef);
 	
 	// Define protagonist shape
@@ -65,7 +63,7 @@ int Game::logic(sf::RenderWindow& window) {
 	world.Step(SCR_SPF, B2D_ITERATIONS_VELOCITY, B2D_ITERATIONS_POSITION);
 	b2Vec2 position = body->GetPosition();
 	float angle = body->GetAngle();
-	std::cout << angle << " | " << position.x << "\n";
+	std::cout << angle << " | " << position.x << " | " << position.y << "\n";
 	
 	return 0;
 }
