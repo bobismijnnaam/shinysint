@@ -7,6 +7,7 @@
 
 // Includes I didn't make myself
 #include <SFML/Graphics.hpp>
+#include <Box2D/Box2D.h>
 
 // Includes I did make myself
 #include "Gamestate.hpp"
@@ -21,6 +22,9 @@ public:
 	int render(sf::RenderWindow& window);
 	
 private:
+	b2World world;
+	b2Body* groundBody;
+	b2Body* body;
 
 } ;
 

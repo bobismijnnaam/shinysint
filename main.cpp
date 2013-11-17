@@ -12,14 +12,27 @@
 #include "globals.hpp"
 
 int main() {
+	std::cout << "hi";	
+	
     sf::RenderWindow window(sf::VideoMode(SCR_W, SCR_H), "Where did my suprise go?");
 
     gm = new GameMan(STATE_GAME);
+	
+	sf::Clock timelord;
+	sf::Time minion;
+	float timekeeper = 0;
 
     while (gm->getState() != STATE_EXIT) {
-        gm->currState->events(window);
-
-        gm->currState->logic(window);
+		minion = timelord.restart();
+		timekeeper += minion.asSeconds();
+	
+		while (timekeeper >= SCR_SPF) {
+			gm->currState->events(window);
+			
+			gm->currState->logic(window);
+			
+			timekeeper -= SCR_SPF;
+		}
 
         gm->changeState();
 
