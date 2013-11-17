@@ -11,3 +11,9 @@
 *.lai
 *.la
 *.a
+
+# Compiled files (you can do that yourself dammit)
+bin/
+
+# Tup files
+.tup/

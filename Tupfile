@@ -1,0 +1,7 @@
+include_rules
+
+CFLAGS += -lsfml-graphics -lsfml-window -lsfml-system 
+CFLAGS += -lBox2D
+
+: foreach *.cpp |> !cxx |> 
+: obj\*.o |> g++ %f -o %o $(CFLAGS) |> bin\wdmsg.exe
