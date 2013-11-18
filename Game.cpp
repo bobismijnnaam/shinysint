@@ -65,7 +65,7 @@ int Game::logic(sf::RenderWindow& window) {
 	world.Step(SCR_SPF, B2D_ITERATIONS_VELOCITY, B2D_ITERATIONS_POSITION);
 	b2Vec2 position = body->GetPosition();
 	float angle = body->GetAngle();
-	std::cout << angle << " | " << position.x << "\n";
+	std::cout << "Angle: " << angle << " Xpos: " << position.x << " Ypos: " << position.y << "\n";
 	
 	return 0;
 }
