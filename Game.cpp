@@ -29,8 +29,6 @@ Game::Game() : world(b2Vec2(0.0f, -10.0f)) {
 	b2BodyDef bodyDef;
 	bodyDef.type = b2_dynamicBody;
 	bodyDef.position.Set(0.0f, 4.0f);
-	
-	// Create actual protagonist body object in world
 	body = world.CreateBody(&bodyDef);
 	
 	// Define protagonist shape

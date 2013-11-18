@@ -13,10 +13,10 @@
 const int SCR_W = 640;
 const int SCR_H = 480;
 const int SCR_FPS = 60;
-const float SCR_SPF = 1 / (float)SCR_FPS;
+const float SCR_SPF = 1.0f / (float)SCR_FPS;
 const std::string SCR_TITLE = "Where did my suprise go?";
 
-const int B2D_ITERATIONS_POSITION = 3;
 const int B2D_ITERATIONS_VELOCITY = 8;
+const int B2D_ITERATIONS_POSITION = 3;
 
 #endif

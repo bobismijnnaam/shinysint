@@ -12,8 +12,6 @@
 #include "globals.hpp"
 
 int main() {
-	std::cout << "hi";	
-	
     sf::RenderWindow window(sf::VideoMode(SCR_W, SCR_H), "Where did my suprise go?");
 
     gm = new GameMan(STATE_GAME);
