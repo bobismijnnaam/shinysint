@@ -12,7 +12,9 @@
 #include "Game.hpp"
 #include "globals.hpp"
 
-Game::Game() : world(b2Vec2(0.0f, -10.0f)) {
+Game::Game() : 	world(b2Vec2(0.0f, -10.0f)),
+				map(world) {
+
 	// Body definition of ground
 	b2BodyDef groundBodyDef;
 	groundBodyDef.position.Set(0.0f, -10.0f);
@@ -41,6 +43,8 @@ Game::Game() : world(b2Vec2(0.0f, -10.0f)) {
 	fixtureDef.density = 1.0f;
 	fixtureDef.friction = 0.3f;
 	body->CreateFixture(&fixtureDef);
+	
+	// Set a view
 }
 
 Game::~Game() {
@@ -60,15 +64,21 @@ int Game::events(sf::RenderWindow& window) {
 }
 
 int Game::logic(sf::RenderWindow& window) {
+	
+	// W.I.P.
+	
 	world.Step(SCR_SPF, B2D_ITERATIONS_VELOCITY, B2D_ITERATIONS_POSITION);
-	b2Vec2 position = body->GetPosition();
-	float angle = body->GetAngle();
-	std::cout << "Angle: " << angle << " Xpos: " << position.x << " Ypos: " << position.y << "\n";
 	
 	return 0;
 }
 
 int Game::render(sf::RenderWindow& window) {
+
+	window.clear(sf::Color::Black);
+	
+	map.draw(window);
+	
+	window.display();
 
 	return 0;
 }

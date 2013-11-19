@@ -12,6 +12,8 @@
 #include "globals.hpp"
 
 int main() {
+	srand(42);
+
     sf::RenderWindow window(sf::VideoMode(SCR_W, SCR_H), "Where did my suprise go?");
 
     gm = new GameMan(STATE_GAME);

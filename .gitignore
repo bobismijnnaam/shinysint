@@ -17,3 +17,6 @@ bin/
 
 # Tup files
 .tup/
+
+# Resources
+Resources/

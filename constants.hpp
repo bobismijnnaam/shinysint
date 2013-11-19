@@ -18,5 +18,8 @@ const std::string SCR_TITLE = "Where did my suprise go?";
 
 const int B2D_ITERATIONS_VELOCITY = 8;
 const int B2D_ITERATIONS_POSITION = 3;
+const int B2D_PPM = 32; // Pixels per meter
+const int B2D_TILE_W = 1; // Tiles are 1x1 meter
+const int B2D_TILE_H = 1;
 
 #endif
