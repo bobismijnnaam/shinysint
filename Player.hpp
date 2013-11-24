@@ -27,7 +27,7 @@ public:
 private:
 	b2Body* playerBody;
 	// sf::Sprite playerSprite;
-	sf::RectangleShape playerShape;
+	sf::CircleShape playerShape;
 	sf::View playerView;
 
 	float xv, yv;

@@ -22,4 +22,6 @@ const int B2D_PPM = 32; // Pixels per meter
 const int B2D_TILE_W = 1; // Tiles are 1x1 meter
 const int B2D_TILE_H = 1;
 
+const int PLR_SPEED = 3;
+
 #endif
