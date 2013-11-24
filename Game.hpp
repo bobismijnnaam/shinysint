@@ -11,6 +11,7 @@
 
 // Includes I did make myself
 #include "Gamestate.hpp"
+#include "Player.hpp"
 #include "Map.hpp"
 
 class Game : public GameState {
@@ -28,6 +29,8 @@ private:
 	b2Body* body;
 	
 	Map map;
+
+	Player player;
 	
 } ;
 

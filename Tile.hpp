@@ -17,12 +17,16 @@ public:
 	Tile(int x, int y, b2World& world);
 	~Tile();
 	
+	int logic(sf::RenderWindow& window);
 	int draw(sf::RenderWindow& window);
 	
 private:
 	b2Body* tileBody;
 	// sf::Sprite tileImage;
-	sf::RectangleShape tileImage;
+	sf::RectangleShape tileShape;
+	
+	static int idCounter;
+	int id;
 
 } ;
 

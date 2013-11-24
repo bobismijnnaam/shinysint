@@ -4,6 +4,7 @@
 
 // Includes I didn't make myself
 #include <Box2D/Box2D.h>
+#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <vector>
 
@@ -18,16 +19,26 @@ Map::Map(b2World& world) {
 	for (int i = 0; i < 100; ++i) {
 		tiles.push_back(Tile(rand() % 100, rand() % 100, world));
 	}
-	
-	view.setCenter(sf::Vector2f(1000, 1000));
-	view.setSize(sf::Vector2f(SCR_W, SCR_H));
 }
 
 Map::~Map() {
 
 }
 
-int Map::draw(sf::RenderWindow& window) {
+int Map::events(sf::RenderWindow& window, sf::Event e) { 
+
+	return 0;
+}
+
+int Map::logic(sf::RenderWindow& window) {
+	for (Tile& t : tiles) {
+		t.logic(window);
+	}
+
+	return 0;
+}
+
+int Map::draw(sf::RenderWindow& window, sf::View view) {
 	window.setView(view);
 	
 	for (Tile& t : tiles) {

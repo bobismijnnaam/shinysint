@@ -19,11 +19,12 @@ public:
 	Map(b2World& world);
 	~Map();
 	
-	int draw(sf::RenderWindow& window);
+	int events(sf::RenderWindow& window, sf::Event e);
+	int logic(sf::RenderWindow& window);
+	int draw(sf::RenderWindow& window, sf::View view);
 	
 private:
 	std::vector<Tile> tiles;
-	sf::View view;
 } ;
 
 #endif
