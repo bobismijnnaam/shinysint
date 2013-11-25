@@ -23,5 +23,6 @@ const int B2D_TILE_W = 1; // Tiles are 1x1 meter
 const int B2D_TILE_H = 1;
 
 const int PLR_SPEED = 3;
+const float PLR_SCALE = 0.9; // Percentage of tile
 
 #endif

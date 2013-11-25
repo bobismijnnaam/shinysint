@@ -19,7 +19,7 @@ Player::Player(b2World& world, float spawnX, float spawnY) {
 	// b2PolygonShape dynamicBox;
 	// dynamicBox.SetAsBox(B2D_TILE_W * 0.5, B2D_TILE_H * 0.5);
 	b2CircleShape dynamicCircle;
-	dynamicCircle.m_radius = B2D_TILE_W * 0.5;
+	dynamicCircle.m_radius = B2D_TILE_W * PLR_SCALE * 0.5;
 	
 	// Define protagonist fixture
 	b2FixtureDef fixtureDef;
@@ -30,8 +30,8 @@ Player::Player(b2World& world, float spawnX, float spawnY) {
 
 	// Define look and smooth manes of protagonist
 	playerShape.setPosition(spawnX * B2D_PPM, spawnY * B2D_PPM);
-	playerShape.setRadius(B2D_TILE_W * B2D_PPM * 0.5);
-	playerShape.setOrigin(B2D_TILE_W * B2D_PPM * 0.5, B2D_TILE_H * B2D_PPM * 0.5);
+	playerShape.setRadius(B2D_TILE_W * B2D_PPM * PLR_SCALE * 0.5);
+	playerShape.setOrigin(B2D_TILE_W * B2D_PPM * PLR_SCALE * 0.5, B2D_TILE_H * B2D_PPM * PLR_SCALE * 0.5);
 	playerShape.setFillColor(sf::Color::Blue);
 
 	xv = 0;
