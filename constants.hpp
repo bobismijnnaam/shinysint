@@ -25,4 +25,7 @@ const int B2D_TILE_H = 1;
 const int PLR_SPEED = 3;
 const float PLR_SCALE = 0.9; // Percentage of tile
 
+const char MAP_WALL = '#';
+const char MAP_FLOOR = '.';
+
 #endif

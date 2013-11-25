@@ -12,7 +12,7 @@ Player::Player(b2World& world, float spawnX, float spawnY) {
 	// Body definition of the protagonist
 	b2BodyDef bodyDef;
 	bodyDef.type = b2_dynamicBody;
-	bodyDef.position.Set(spawnX, spawnY);
+	bodyDef.position.Set((0.5 + spawnX) * B2D_TILE_W, (0.5 + spawnY) * B2D_TILE_H);
 	playerBody = world.CreateBody(&bodyDef);
 	
 	// Define protagonist shape
@@ -29,7 +29,8 @@ Player::Player(b2World& world, float spawnX, float spawnY) {
 	playerBody->CreateFixture(&fixtureDef);
 
 	// Define look and smooth manes of protagonist
-	playerShape.setPosition(spawnX * B2D_PPM, spawnY * B2D_PPM);
+	b2Vec2 pos = playerBody->GetPosition();
+	playerShape.setPosition(pos.x * B2D_PPM, pos.y * B2D_PPM);
 	playerShape.setRadius(B2D_TILE_W * B2D_PPM * PLR_SCALE * 0.5);
 	playerShape.setOrigin(B2D_TILE_W * B2D_PPM * PLR_SCALE * 0.5, B2D_TILE_H * B2D_PPM * PLR_SCALE * 0.5);
 	playerShape.setFillColor(sf::Color::Blue);

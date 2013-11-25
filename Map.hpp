@@ -16,7 +16,7 @@
 
 class Map {
 public:
-	Map(b2World& world);
+	Map(b2World& world, std::vector<std::string>& lvl);
 	~Map();
 	
 	int events(sf::RenderWindow& window, sf::Event e);

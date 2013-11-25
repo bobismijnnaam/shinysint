@@ -18,7 +18,7 @@ int Tile::idCounter = 0;
 Tile::Tile(int x, int y, b2World& world) : tileShape(sf::Vector2f(B2D_PPM * B2D_TILE_W, B2D_PPM * B2D_TILE_H)) {
 	// Physic definition
 	b2BodyDef tileBodyDef;
-	tileBodyDef.position.Set((-0.5 + x) * B2D_TILE_W, (-0.5 + y) * B2D_TILE_H);
+	tileBodyDef.position.Set((0.5 + x) * B2D_TILE_W, (0.5 + y) * B2D_TILE_H);
 	
 	tileBody = world.CreateBody(&tileBodyDef);
 	

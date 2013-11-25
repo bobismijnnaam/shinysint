@@ -11,10 +11,11 @@
 #include "constants.hpp"
 #include "Game.hpp"
 #include "globals.hpp"
+#include "levels.hpp"
 
 Game::Game() : 	world(b2Vec2(0.0f, 0.0f)),
-				map(world),
-				player(world, 1000 / B2D_PPM, 1000 / B2D_PPM) {
+				map(world, level1),
+				player(world, 3, 3) {
 	// wut
 }
 

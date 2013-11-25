@@ -13,11 +13,21 @@
 #include "Map.hpp"
 #include "Tile.hpp"
 
-Map::Map(b2World& world) {
-	tiles.reserve(100);
+Map::Map(b2World& world, std::vector<std::string>& lvl) {
+	tiles.reserve(lvl.size() * lvl.size());
 	
+	/* Randomized Tiles
 	for (int i = 0; i < 100; ++i) {
 		tiles.push_back(Tile(rand() % 100, rand() % 100, world));
+	}
+	*/
+
+	for (int y = 0; y < lvl.size(); ++y) {
+		for (int x = 0; x < lvl.size(); ++x) {
+			if (lvl.at(y)[x] == '#') {
+				tiles.push_back(Tile(x, y, world));
+			}
+		}
 	}
 }
 
