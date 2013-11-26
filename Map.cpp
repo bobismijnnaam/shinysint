@@ -14,18 +14,25 @@
 #include "Tile.hpp"
 
 Map::Map(b2World& world, std::vector<std::string>& lvl) {
+	tileSheet.loadFromFile("Media/tilesheet.png", sf::IntRect());
+
+	// Prepare level generation
 	tiles.reserve(lvl.size() * lvl.size());
+
+	// Physics definition
+	b2BodyDef tileBodyDef;
+	tileBodyDef.position.Set(0, 0);
 	
-	/* Randomized Tiles
-	for (int i = 0; i < 100; ++i) {
-		tiles.push_back(Tile(rand() % 100, rand() % 100, world));
-	}
-	*/
+	wallContainer = world.CreateBody(&tileBodyDef);
 
 	for (int y = 0; y < lvl.size(); ++y) {
 		for (int x = 0; x < lvl.size(); ++x) {
 			if (lvl.at(y)[x] == '#') {
-				tiles.push_back(Tile(x, y, world));
+				tiles.push_back(Tile(x, y, wallContainer, tileSheet, TileType::Wall));
+			} else if (lvl.at(y)[x] == '.') {
+				tiles.push_back(Tile(x, y, wallContainer, tileSheet, TileType::Floor));
+			} else if (lvl.at(y)[x] == '*') {
+				tiles.push_back(Tile(x, y, wallContainer, tileSheet, TileType::Outside));
 			}
 		}
 	}

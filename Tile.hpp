@@ -11,10 +11,15 @@
 
 // Includes I did make myself
 
+enum class TileType {
+	Wall,
+	Floor,
+	Outside
+} ;
 
 class Tile {
 public:
-	Tile(int x, int y, b2World& world);
+	Tile(int x, int y, b2Body* container, sf::Texture& tileSheet, TileType tileType);
 	~Tile();
 	
 	int logic(sf::RenderWindow& window);
@@ -22,12 +27,12 @@ public:
 	
 private:
 	b2Body* tileBody;
-	// sf::Sprite tileImage;
-	sf::RectangleShape tileShape;
+	sf::Sprite tileShape;
+	// sf::RectangleShape tileShape;
 	
 	static int idCounter;
 	int id;
-
+	TileType type;
 } ;
 
 #endif

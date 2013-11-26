@@ -25,6 +25,9 @@ public:
 	
 private:
 	std::vector<Tile> tiles;
+	b2Body* wallContainer;
+
+	sf::Texture tileSheet;
 } ;
 
 #endif

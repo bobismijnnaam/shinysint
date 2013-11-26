@@ -54,7 +54,7 @@ int Game::logic(sf::RenderWindow& window) {
 
 int Game::render(sf::RenderWindow& window) {
 
-	window.clear(sf::Color::Black);
+	window.clear(sf::Color(120, 120, 120, 255));
 	
 	map.draw(window, player.getView());
 
