@@ -29,11 +29,14 @@ Player::Player(b2World& world, float spawnX, float spawnY) {
 	playerBody->CreateFixture(&fixtureDef);
 
 	// Define look and smooth manes of protagonist
+	playerTexture.loadFromFile("Media/saw.png");
+
 	b2Vec2 pos = playerBody->GetPosition();
 	playerShape.setPosition(pos.x * B2D_PPM, pos.y * B2D_PPM);
-	playerShape.setRadius(B2D_TILE_W * B2D_PPM * PLR_SCALE * 0.5);
+	// playerShape.setRadius(B2D_TILE_W * B2D_PPM * PLR_SCALE * 0.5);
 	playerShape.setOrigin(B2D_TILE_W * B2D_PPM * PLR_SCALE * 0.5, B2D_TILE_H * B2D_PPM * PLR_SCALE * 0.5);
-	playerShape.setFillColor(sf::Color::Blue);
+	// playerShape.setFillColor(sf::Color::Blue);
+	playerShape.setTexture(playerTexture);
 
 	xv = 0;
 	yv = 0;

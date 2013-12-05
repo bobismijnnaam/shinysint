@@ -14,7 +14,7 @@ const int SCR_W = 640;
 const int SCR_H = 480;
 const int SCR_FPS = 60;
 const float SCR_SPF = 1.0f / (float)SCR_FPS;
-const std::string SCR_TITLE = "Where did my suprise go?";
+const std::string SCR_TITLE = "Pop, pop, pop!";
 
 const int B2D_ITERATIONS_VELOCITY = 8;
 const int B2D_ITERATIONS_POSITION = 3;
@@ -27,5 +27,7 @@ const float PLR_SCALE = 0.9; // Percentage of tile
 
 const char MAP_WALL = '#';
 const char MAP_FLOOR = '.';
+
+const int TYPE_TARGET = 1;
 
 #endif

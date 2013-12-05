@@ -8,15 +8,16 @@
 // Includes I did make myself
 #include "gamestate.hpp"
 #include "Game.hpp"
+#include "Menu.hpp"
 
 GameMan::GameMan(GameStates startState) {
     switch (startState) {
         case STATE_GAME:
             this->currState = new Game();
             break;
-        // case STATE_MENU:
-            // this->currState = new gsMenu();
-            // break;
+        case STATE_MENU:
+            this->currState = new Menu();
+            break;
         default:
             this->currState = new Game();
             break;
@@ -50,9 +51,9 @@ int GameMan::changeState() {
                 case STATE_GAME:
                     this->currState = new Game();
                     break;
-                // case STATE_MENU:
-                    // this->currState = new gsMenu();
-                    // break;
+                case STATE_MENU:
+                    this->currState = new Menu();
+                    break;
                 default:
                     this->currState = new Game();
                     break;

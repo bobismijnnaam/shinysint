@@ -1,3 +1,4 @@
 CFLAGS += -Wall
 
 !cxx = |> g++ -c %f -o %o $(CFLAGS) |> obj\%B.o
+!cxx_dbg = |> g++ -g -c %f -o %o $(CFLAGS) |> dbg_obj\%B.o

@@ -5,4 +5,6 @@ CFLAGS += -lBox2D
 CFLAGS += -std=c++0x
 
 : foreach *.cpp |> !cxx |> 
+: foreach *.cpp |> !cxx_dbg |> 
 : obj\*.o |> g++ %f -o %o $(CFLAGS) |> bin\wdmsg.exe
+: dbg_obj\*.o |> g++ -g %f -o %o $(CFLAGS) |> dbg\wdmsg.exe

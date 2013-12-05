@@ -26,8 +26,9 @@ public:
 
 private:
 	b2Body* playerBody;
-	// sf::Sprite playerSprite;
-	sf::CircleShape playerShape;
+	sf::Sprite playerShape;
+	sf::Texture playerTexture;
+	// sf::CircleShape playerShape;
 	sf::View playerView;
 
 	float xv, yv;
