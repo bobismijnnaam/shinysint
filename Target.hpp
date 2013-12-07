@@ -13,7 +13,7 @@
 
 class Target {
 public:
-	Target(b2World& world, sf::Texture& targetTexture);
+	Target(b2World& world, sf::Texture& targetTexture, int offX, int offY);
 	~Target();
 
 	int logic(sf::RenderWindow& window);

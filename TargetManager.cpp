@@ -6,6 +6,7 @@
 #include <iostream>
 
 // Includes I did make myself
+#include "levels.hpp"
 #include "Player.hpp"
 #include "Target.hpp"
 #include "TargetManager.hpp"
@@ -13,8 +14,18 @@
 TargetManager::TargetManager(b2World& world, int amount) {
 	targetTexture.loadFromFile("Media/enemy.png");
 
+	/*
 	for (int i = 0; i < amount; ++i) {
 		targets.push_back(new Target(world, targetTexture));
+	}
+	*/
+
+	for (int y = 0; y < level1.size(); ++y) {
+		for (int x = 0; x < level1.at(y).length(); ++x) {
+			if (level1.at(y)[x] == '@') {
+				targets.push_back(new Target(world, targetTexture, x, y));
+			} 
+		}
 	}
 }
 

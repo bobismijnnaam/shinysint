@@ -12,13 +12,13 @@
 #include "levels.hpp"
 #include "Target.hpp"
 
-Target::Target(b2World& world, sf::Texture& targetTexture) {
-	int offX = rand() % 15, offY = rand() % 15;
+Target::Target(b2World& world, sf::Texture& targetTexture, int offX, int offY) {
+	/* int offX = rand() % 15, offY = rand() % 15;
 
 	while (level1.at(offY)[offX] != MAP_FLOOR) {
 		offX = rand() % 15;
 		offY = rand() % 15;
-	}
+	} */
 
 	float xPos = (offX + 0.5) * B2D_TILE_W;
 	float yPos = (offY + 0.5) * B2D_TILE_H;

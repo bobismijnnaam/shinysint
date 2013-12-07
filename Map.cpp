@@ -26,10 +26,10 @@ Map::Map(b2World& world, std::vector<std::string>& lvl) {
 	wallContainer = world.CreateBody(&tileBodyDef);
 
 	for (int y = 0; y < lvl.size(); ++y) {
-		for (int x = 0; x < lvl.size(); ++x) {
+		for (int x = 0; x < lvl.at(y).length(); ++x) {
 			if (lvl.at(y)[x] == '#') {
 				tiles.push_back(Tile(x, y, wallContainer, tileSheet, TileType::Wall));
-			} else if (lvl.at(y)[x] == '.') {
+			} else if (lvl.at(y)[x] == '.' || lvl.at(y)[x] == '@') {
 				tiles.push_back(Tile(x, y, wallContainer, tileSheet, TileType::Floor));
 			} else if (lvl.at(y)[x] == '*') {
 				tiles.push_back(Tile(x, y, wallContainer, tileSheet, TileType::Outside));
